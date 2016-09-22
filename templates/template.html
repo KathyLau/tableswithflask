@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <title> {{foo}} </title>
+
+</head>
+
+<body>
+
+  {% block content %}
+    <table border="1">
+   {% for item in L %}
+   <tr>
+  	<td>
+    	{{item.2}}
+	</td>
+
+	<td>
+  	{{ (item.1-item.0) /10 }}
+
+	</td>
+   </tr>
+    {% endfor %}
+
+<br>
+<b> Randomly Selected Job:</b> {{randjob}}
+  <br>  <br>
+  {% endblock %}
+
+</body>
+
+</html>
