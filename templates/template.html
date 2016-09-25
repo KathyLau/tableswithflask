@@ -11,17 +11,22 @@
 <body>
 
   {% block content %}
+
     <table border="1">
-   {% for item in L %}
+   {% for key, value in L.items() %}
    <tr>
   	<td>
-    	{{item.2}}
+    	{{key}}
 	</td>
 
 	<td>
-  	{{ (item.1-item.0) /10 }}
+  	{{ value.1 - value.0 }}
 
 	</td>
+
+<td>
+<a href= "{{value.2}}"> {{value.2}} </a>
+</td>
    </tr>
     {% endfor %}
 
