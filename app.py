@@ -23,7 +23,7 @@ def create_dictionary(filename):
         percent = row[1]
         link = row[2]
         
-        #set new lower and upper bounds
+        #set new lower and upper bounds for random choosing usage
         lowBound = uppBound
         uppBound = float(percent) + lowBound
         d[title] = [lowBound, uppBound, link]
@@ -32,14 +32,14 @@ def create_dictionary(filename):
 
 """
 Args:
-    None
+    Dictionary to be read
 Returns:
     Job title randomly generated
     based on percentage value
 """
 
 def chooser(d):
-    rand = int(random.random() * 100)
+    rand = int(random.random() * 99.8)
     for key in d:
         if rand > d[key][0] and rand < d[key][1]:
             return key
@@ -51,7 +51,6 @@ def root():
     return render_template("template.html", foo="Occupations", L=d, randjob = chooser(d))
 
 if __name__ == '__main__':
-    #print create_dictionary('occupations.csv')
     app.run(debug=True)
 
 
