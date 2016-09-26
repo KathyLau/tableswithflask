@@ -14,7 +14,7 @@
 
     <table border="1">
 
-   {% for key, value in L.items() %}
+   {% for key in occuDict %}
 
    <tr>
   	<td>
@@ -22,11 +22,11 @@
 	</td>
 
 	<td>
-  	{{ value.1 - value.0 }}
+  	{{ occuDict[key][1] - occuDict[key][0] }}
 	</td>
 
 <td>
-<a href= "{{value.2}}"> {{value.2}} </a>
+<a href= "{{ occuDict[key][2]}}"> {{ occuDict[key][2]}} </a>
 </td>
    </tr>
     {% endfor %}

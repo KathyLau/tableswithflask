@@ -48,7 +48,7 @@ def chooser(d):
 @app.route("/")
 def root():
     d = create_dictionary('occupations.csv')
-    return render_template("template.html", foo="Occupations", L=d, randjob = chooser(d))
+    return render_template("template.html", foo="Occupations", occuDict=d, randjob = chooser(d))
 
 if __name__ == '__main__':
     app.run(debug=True)
